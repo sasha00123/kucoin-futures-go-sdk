@@ -157,7 +157,7 @@ func (as *ApiService) Call(request *Request) (*ApiResponse, error) {
 			log.Println("[[Recovery] panic recovered:", err)
 		}
 	}()
-	fmt.Printf("Kucoin request, URL: %s, \n", request.Path)
+	fmt.Printf("%s > Kucoin request, URL: %s, \n", time.Now(), request.Path)
 
 	request.BaseURI = as.apiBaseURI
 	request.SkipVerifyTls = as.apiSkipVerifyTls
